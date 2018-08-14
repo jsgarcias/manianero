@@ -1,0 +1,57 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Mar 12, 2018, 2:34:46 AM
+    Author     : grama
+*/
+
+.contenedor{
+    min-width: 50%;
+    margin-bottom: 10px;
+    height: 70px;
+    overflow: hidden;
+    border: 2px solid;
+    border-radius: 10px;
+    background-color: #87CEEB;
+}
+
+.child1 {
+  float: left;
+  width: 15%;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  height: 70px;
+  line-height: 70px;
+}
+
+.child2 {
+  float: left;
+  width: 65%;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  height: 70px;
+  line-height: 70px;
+}
+
+.child3 {
+  float: left;
+  width: 20%;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  height: 70px;
+  line-height: 70px;
+}
+
+.contenedor a {
+    color: #ffffff;
+}
+
+.contenedor a:hover {
+    color: #0000ff;
+}

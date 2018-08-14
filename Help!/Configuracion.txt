@@ -1,0 +1,19 @@
+Utilizar Xampp
+
+Usuario = Sujeto1
+Correo = Sujeto1@gmail.com
+Contrasena = 123456
+
+
+Comandos a realizar antes de empezar:
+
+1. Obtener las dependencias: 'composer install'
+2. Migrar los modelos a la base de datos: 'php artisan migrate'
+3. Migrar los datos por defecto a la base de datos: 'php artisan db:seed'
+//en caso de problema en el paso 2 pueden probar 'php artisan migrate:refresh --seed'
+
+
+
+
+
+
