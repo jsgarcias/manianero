@@ -82,6 +82,9 @@ class PostController extends Controller
     public function edit($id)
     {
         //
+        $noticia = Post::find($id);
+        $categorias = Category::all();
+        return view('pages.editar', ['noticia'=>$noticia, 'categorias' => $categorias]);
     }
 
     /**
@@ -115,4 +118,5 @@ class PostController extends Controller
             return view('pages.success', ['mensaje' => 'La noticia no ha podido ser eliminada.', 200]);
         }
     }
+    
 }
