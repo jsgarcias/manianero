@@ -70,7 +70,7 @@ class PostController extends Controller
         //
         $noticia = Post::find($id);
         
-        return view('pages.leer', ['noticia'=>$noticia]);
+        return view('pages.leer', ['noticia'=>$noticia, 'id'=>$id]);
     }
 
     /**
@@ -105,5 +105,14 @@ class PostController extends Controller
     public function destroy($id)
     {
         //
+    }
+    
+    public function delete($id){
+        $noticia = Post::find($id);
+        if($noticia->delete()){
+            return view('pages.success', ['mensaje' => 'La noticia ha sido eliminada exitosamente.', 200]);
+        }else{
+            return view('pages.success', ['mensaje' => 'La noticia no ha podido ser eliminada.', 200]);
+        }
     }
 }
