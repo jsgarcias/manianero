@@ -14,9 +14,12 @@
     <span id="header">Editar noticia</span>
     
     <!-- Formulario para editar la noticia -->
-    <form name="public_new" id="public_new" method="post" action="{{ route('editar') }}" style="text-align: left;" enctype="multipart/form-data">
+    <form name="public_new" id="public_new" method="post" action="{{ route('edit') }}" style="text-align: left;" enctype="multipart/form-data">
         
         {{ csrf_field() }}
+        
+        <!-- Identificador de la noticia -->
+        <input type="hidden" value="{{ $noticia->id }}" id="id" name="id">
         
         <!-- Entrada para el título -->
         <label for="titulo" class="tags">Titulo</label>

@@ -20,6 +20,7 @@ Route::get('/crear', 'PostController@create')->middleware('auth')->name('crear')
 Route::get('/ver/{id}', 'PostController@show')->name('ver_noticia');
 Route::get('/del/{id}', 'PostController@delete')->name('del_noticia');
 Route::get('/editar/{id}', 'PostController@edit')->name('editar');
+Route::post('/edit', 'PostController@update')->name('edit');
 Route::post('/publish', 'PostController@store')->name('publish');
 
 Route::resource('posts','PostController');

@@ -70,7 +70,7 @@ class PostController extends Controller
         //
         $noticia = Post::find($id);
         
-        return view('pages.leer', ['noticia'=>$noticia, 'id'=>$id]);
+        return view('pages.leer', ['noticia'=>$noticia]);
     }
 
     /**
@@ -94,9 +94,23 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
         //
+        $Noticia = Post::find($request->id);
+        $Noticia->title = $request->titulo;
+        if($request->file('file') != null){
+            $Noticia->image = $request->file('file')->store('public');
+            $Noticia->image = substr($Noticia->image, 7);
+        }
+        $Noticia->body = $request->summernote;
+        $Noticia->state = $request->state;
+        if($Noticia->save()){
+            return view('pages.success', ['mensaje' => 'La noticia ha sido modificada exitosamente.', 200]);
+        }else{
+            return view('pages.success', ['mensaje' => 'La noticia no pudo ser modificada.', 500]);
+        }
+        
     }
 
     /**

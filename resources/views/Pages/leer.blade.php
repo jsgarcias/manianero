@@ -11,11 +11,11 @@
         <p><img src="{{ asset("storage/" . $noticia->image)}}" /></p>
         <p>{!!html_entity_decode($noticia->body)!!}</p>
         @if (Auth::check())
-        <form action="{{ route('del_noticia', ['id' => $id]) }}" method="get">
+        <form action="{{ route('del_noticia', ['id' => $noticia->id]) }}" method="get">
             {!! csrf_field() !!}
             <input type="submit" value="Eliminar">
         </form>
-        <p><a href="">Editar</a></p>
+        <p><a href="{{route("editar", ['id' => $noticia->id]) }}">Editar</a></p>
         @endif
     </div>
     @endsection
